@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import Routes from "./Routes";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import Register from "./containers/Register";
+import LoginRegistration from "./containers/LoginRegister";
+import Profile from "./containers/Profile";
+import './containers/Navbar.css'
 
 function App() {
+  // const user = useSelector(selectUser);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Routes />
     </div>
   );
 }
